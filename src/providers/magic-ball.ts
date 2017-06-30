@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+
+// import 'rxjs/add/operator/map';
 
 /*
   Generated class for the MagicBall provider.
@@ -11,8 +11,32 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MagicBall {
 
-  constructor(public http: Http) {
-    console.log('Hello MagicBall Provider');
+	answers: any;
+
+  constructor() {
+		this.answers = [
+			'Yes',
+			'No',
+			'Maybe',
+			'All signs point to yes',
+			'Try again later',
+			'Without a doubt',
+			'Don\'t count on it',
+			'Most likely',
+			'Absolutely not'
+		];
   }
+
+	getAnswers() {
+		return this.answers;
+	}
+
+	getRandomAnswer() {
+		return this.answers[this.getRandomInt(0, this.answers.length - 1)];
+	}
+
+	getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 
 }

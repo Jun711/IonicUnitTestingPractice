@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { MagicBall } from '../../providers/magic-ball';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  answer: any = "..."
 
+  constructor(public magicBall: MagicBall) {
+
+  }
+
+  showAnswer() {
+    this.answer = this.magicBall.getRandomAnswer();
   }
 
 }

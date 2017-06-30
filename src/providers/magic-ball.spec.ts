@@ -24,12 +24,12 @@ describe('Magic 8 Ball Service', () => {
     expect(Array.isArray(result)).toBeTruthy;
     expect(result.length).toBeGreaterThan(0);
   }
-  ));
+  );
 
 	it('should return one random answer as a string', () => {
 		  expect(typeof magicBall.getRandomAnswer()).toBe('string');
 		}
-	));
+	);
 
 	it('should have both yes and no available in result set', () => {
 
@@ -39,5 +39,5 @@ describe('Magic 8 Ball Service', () => {
 		  expect(result).toContain('No');
 
 		}
-	));
+	);
 });
